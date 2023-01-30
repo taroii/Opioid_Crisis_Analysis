@@ -1,7 +1,7 @@
 # The Opioid Crisis and Possible Resolutions
-UCLA Math 42 (Introduction to Data-Driven Mathematical Modeling: Life, Universe, and Everything)
+UCLA Math 42 (Introduction to Data-Driven Mathematical Modeling: Life, Universe, and Everything)  
 By Taro Iyadomi, Jonah Jung, Jeffrey Gutierrez, and Andrew Schweitzer  
-06/10/2022 (Published 1/30/2023)
+06/10/2022 (Published 1/30/2023)  
 
 ## Abstract  
 We were tasked to offer insight to the Chief Administrator, Drug Enforcement Administration and the National Forensic Laboratory Information System by creating a mathematical model that predicts the regions where opioid use originated and spread.
