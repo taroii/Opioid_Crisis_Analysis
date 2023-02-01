@@ -33,17 +33,17 @@ Here we found the states with the most notable growth or decline trends. In orde
 
 ![image](https://user-images.githubusercontent.com/114524578/216152815-195dd623-9cb6-4aa2-9eda-46c51821f6cb.png)  
 
-Based on these plots, we decided to focus on Ohio and Pennsylvania, as they showed the most drastic patterns. Within those states, we found that Philedelphia County in Pennsylvania and Hamilton County in Ohio were the counties that represented the most change in drug usage over the years.
+Based on these plots, we decided to focus on Ohio and Pennsylvania, as they showed the most drastic patterns along with large sample sizes. Within those states, we found that Philedelphia County in Pennsylvania and Hamilton County in Ohio were the counties that represented the most change in drug usage over the years.
 
 ## Building Models  
 
-After chosing Hamilton, Ohio and Philadelphia, Pennsylvania as our counties of focus, we built our initial models based on the variables that we thought intuitively made the most sense when discussing drug use.  
+After chosing Hamilton, Ohio and Philadelphia, Pennsylvania as our counties of focus, we built our initial models using a modified SIR (susceptible, infected, removed) model, tuning our hyperparameters, beta and sigma, and population data based on our data.  
 
 ![image](https://user-images.githubusercontent.com/114524578/216153446-b19d3bb3-e5d2-4bdb-adb4-dc5980d51f83.png)  
 
-The variables we built our model on were Household Type, Relationship Status, Marital Status, Educational Attainment, Veteran Status, Disability Status, Language Spoken At Home, and Ancestry.  
+After building our initial models, we proceeded to adapt our models based on the variables that we thought intuitively made the most sense when discussing drug use.  Those variables were Household Type, Relationship Status, Marital Status, Educational Attainment, Veteran Status, Disability Status, Language Spoken At Home, and Ancestry.  
 
-We then analyzed all of those factors, comparing the Philadelphia County data with the Hamilton County data to determine which of those factors contributed to drug usage the most. We settled on Marital Status after observing sizable differences between the Marital Status plots of each county.  
+To reduce our models' complexity, we analyzed all of the aforementioned factors, comparing the Philadelphia County data with the Hamilton County data to determine which of those factors contributed to drug usage the most. We settled on Marital Status after observing sizable differences between the Marital Status plots of each county.  
 
 ![image](https://user-images.githubusercontent.com/114524578/216154625-3ab60520-80f5-47b6-a1b7-307a1e8b2278.png)
 
@@ -59,4 +59,13 @@ We applied the same strategy to the Pennsylvania data and created our final mode
 
 With everything in mind, we suggest that all opioid addicts get transferred to isolation centers as soon as possible. Being that new opioid cases are happening everyday, this means that there will still be opioid users out in public, except it will be a proportion that is way smaller than the original population. To account for this, we assume that there will still be about 1000 opioid users out in the public who have not yet been transferred to a rehab facility. Since there are way less users who can possibly expose others, both sigma and beta from our modified SIR model significantly go down.  
 
-After incorporating these modifications to our model, we ran the simulation again to predict future trends now with the integrated solution.  
+After incorporating these modifications to our models, we ran the simulation again to predict future trends now with the integrated solution.  
+
+![image](https://user-images.githubusercontent.com/114524578/216156551-1b608d80-b43b-4bc2-864e-966a7c99c825.png)
+
+Here, the time in days represents the number of days after the last date in 2017.  
+
+## Conclusion
+
+Our initial SIR models gave insight into when the states would reach a certain carrying capacity and the duration it would take, but it failed to incorporate the impact that socio-economic factors have on the data. We looked at the individual drug reports of each county in the five states with the most notable drug use trends and noticed that each state had a particular “dominant county” that strongly represented the overall behavior and growth of opioid use in the state. Using this, as well as taking account of the socio-economic impact of the data by incorporating marital status into the model, we created a refined model that more accurately represented the data and growth or decline of opioid use in each state. In our research, we specifically looked at the states of Ohio and Pennsylvania because they had the largest sample size and most distinct shape of their data. When we plotted the new model against the statistics for the total drug reports in Ohio and Pennsylvania, its progressively growing sigmoid curve tightly followed and modeled the presented data, implying that this model was successful in how it predicts the trend of opioid use. From the model and using the dominant counties we were able to discern and validify patterns of opioid use that suggest the possible locations where opioid use may have started.
+
